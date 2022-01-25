@@ -24,7 +24,6 @@ class HospitalEmployee {
 The extends keyword makes the methods of the class
 The super keyword calls the constructor of the parent class.
 To avoid reference errors, it is best practice to call super on the first line of subclass constructors
-
 class HospitalEmployee {
   constructor(name) {
     this._name = name;
@@ -42,19 +41,24 @@ class HospitalEmployee {
   takeVacationDays(daysOff) {
     this._remainingVacationDays -= daysOff;
   }
+  
+  static generatePassword() {
+    return Math.floor(Math.random() * 10000);
+  }
 }
 
 class Nurse extends HospitalEmployee {
   constructor(name, certifications) {
     super(name);
     this._certifications = certifications;
-  }
+  } 
+  
   get certifications() {
-    return this._certifications
+    return this._certifications;
   }
   
-  addCertification(newCertification){
-      this._certifications.push(newCertification)
+  addCertification(newCertification) {
+    this.certifications.push(newCertification);
   }
 }
 
@@ -65,6 +69,16 @@ nurseOlynyk.addCertification('Genetics');
 console.log(nurseOlynyk.certifications);
 
 the extends keyword brings all of the parent’s getters and methods into the child class,
+
+
+
+Classes are templates for objects.
+Javascript calls a constructor method when we create a new instance of a class.
+Inheritance is when we create a parent class with properties and methods that we can extend to child classes.
+We use the extends keyword to create a subclass.
+The super keyword calls the constructor() of a parent class.
+Static methods are called on the class, but not on instances of the class.
+
 
 
 
