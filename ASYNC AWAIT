@@ -1,0 +1,9 @@
+The async keyword is used to write functions that handle asynchronous actions.
+
+const myFunc = async () => {
+  // Function body here
+};
+ 
+myFunc();
+
+The await keyword can only be used inside an async function. await is an operator: it returns the resolved value of a promise
